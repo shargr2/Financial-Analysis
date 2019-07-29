@@ -1,7 +1,0 @@
-Budget Data Summary
----------------------------------------------------------------
-Total months = , 86
-Net total = $, 38382578
-The average of the changes in Profit/Losses over the entire period $, -2315.1176470588234
-The greatest increase in profits was $, 532869
-The greatest decrease in profit was $, 77242
