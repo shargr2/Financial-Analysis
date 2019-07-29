@@ -1,4 +1,4 @@
-PYBANK:
+#PYBANK (main.py is in resources folder)
 import os
 import csv
 csvpath = os.path.join("..", "Resources", "budget_data.csv")
@@ -61,7 +61,8 @@ with open("summary.txt", "a") as f:
 f.close() 
 
 
-PYPOLL:
+#PYPOLL: (main.py is in resources folder)
+
 import os
 import csv
 csvpath = os.path.join("..", "Resources", "election_data.csv")
@@ -113,6 +114,7 @@ with open(csvpath, newline="") as csvfile:
     #delete duplicate names from list
     candidates = list(dict.fromkeys(candidates))
     print("Total Votes ", totalvotes)
+
     print(candidates)
     summary = zip(candidates, percentages, cantotal)
     for i in summary:
@@ -120,10 +122,25 @@ with open(csvpath, newline="") as csvfile:
 
     #find the winner
     if khantotal > correytotal and khantotal > litotal and khantotal > tooleytotal:
+        winner = "Khan"
         print("Khan is the winner")
     elif correytotal > khantotal and correytotal > litotal and correytotal > tooleytotal:
+        winner = "Correy"
         print("Correy is the winner")
     elif litotal > khantotal and litotal > correytotal and litotal > tooleytotal:
+        winner = "Li"
         print("Li is the winner")
     else:
+        winner = "Tooley"
         print("Tooley is the winner")
+
+with open("summary.txt", "a") as f:
+    print(f"Election Results", file = f)
+    print(f"---------------------------------------------------------------", file = f)
+    print(f"Total number of votes casted in the election: {totalvotes}", file = f)
+    print(f"---------------------------------------------------------------", file = f)
+    for i in summary:
+        print(i, file = f)
+    print(f"---------------------------------------------------------------", file = f)
+    print(f"The winner of the election is: {winner}", file = f)
+f.close() 
